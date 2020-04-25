@@ -1,0 +1,53 @@
+<head>
+    <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <div class="row" style="margin-top:100px;">
+        <div class="col-md-2 col-sm-1 col-xs-1"></div>
+        <div class="col-md-8 col-sm-11 col-xs-11">
+            <video id="player" class="video-js">
+                <p class="vjs-no-js vjs-fluid">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+        <div class="col-md-2 col-sm-1 col-xs-1"></div>            
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        videojs('player', {
+            fluid: true,
+            responsive: true,
+            controls: true,
+            sources: [
+                { src: 'jellyfish.mp4',type: 'video/mp4'}
+            ],
+            controlBar: {
+                fullscreenToggle: true
+            },
+            poster: "welcome.jpg", //if you want an image to display 
+            breakpoints: {
+                tiny: 300,
+                xsmall: 400,
+                small: 500,
+                medium: 600,
+                large: 700,
+                xlarge: 800,
+                huge: 900
+            }
+        });
+    </script>
+  </body>
